@@ -1,0 +1,77 @@
+<?xml version="1.0"?>
+<!-- ################################################ -->
+<!-- GAZEBO ADDITIONAL DESCRIPTION OF THE 4-WHEELED ROBOT -->
+<!-- Made by Aleksandar Haber -->
+<!-- March 2024 -->
+<!-- ################################################ -->
+
+<robot>
+  <!-- Everything is described here -->
+  <!-- http://classic.gazebosim.org/tutorials?tut=ros_urdf&cat=connect_ros -->
+  <!-- mu1 and mu2 are friction coefficients -->
+  
+  <gazebo reference="base_link">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Red</material>
+  </gazebo>
+
+  <gazebo reference="left_before">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="right_before">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="left_after">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <gazebo reference="right_after">
+    <mu1>0.2</mu1>
+    <mu2>0.2</mu2>
+    <material>Gazebo/Yellow</material>
+  </gazebo>
+
+  <!-- Controller for the 4-wheeled robot -->
+  <gazebo>
+    <plugin name="skid_steer_drive" filename="libgazebo_ros_diff_drive.so">
+      <ros>
+        <namespace></namespace>
+      </ros>
+
+      <!-- Number of wheel pairs -->
+      <number_of_wheel_pairs>2</number_of_wheel_pairs>
+
+      <!-- Wheels0 -->
+      <left_joint>left_before</left_joint>
+      <right_joint>right_before</right_joint>
+
+      <!-- Wheels1 -->
+      <left_joint>left_after</left_joint>
+      <right_joint>right_after</right_joint>
+
+      <!-- Kinematics -->
+      <wheel_separation>5.0</wheel_separation>
+      <wheel_diameter>1.0722</wheel_diameter>
+
+      <!-- Limits -->
+      <max_wheel_torque>1000</max_wheel_torque>
+      <max_wheel_acceleration>5.0</max_wheel_acceleration>
+
+  <!-- Output -->
+      <publish_odom>true</publish_odom>
+      <publish_odom_tf>true</publish_odom_tf>
+      <publish_wheel_tf>true</publish_wheel_tf>
+      <odometry_frame>odom</odometry_frame>
+      <robot_base_frame>dummy</robot_base_frame>
+    </plugin>
+  </gazebo>  
+</robot>

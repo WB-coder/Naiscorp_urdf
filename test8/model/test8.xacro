@@ -1,0 +1,624 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="test8" xmlns:xacro="https://www.ros.org/wiki/xacro">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="3.67391871240909E-17 -2.83649888143271E-17 0.0759584336413709"
+        rpy="0 0 0" />
+      <mass
+        value="4.45287465165593" />
+      <inertia
+        ixx="0.110766273018809"
+        ixy="2.45216382337255E-17"
+        ixz="1.40550118355875E-19"
+        iyy="0.105353330884373"
+        iyz="1.45993853537779E-19"
+        izz="0.155207158010102" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_before">
+    <inertial>
+      <origin
+        xyz="-0.00999999999998533 -6.16536460773531E-10 3.76427522832956E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.180581528023681" />
+      <inertia
+        ixx="0.000277824125988543"
+        ixy="5.6824275023524E-15"
+        ixz="9.8878010897764E-15"
+        iyy="0.000144931452625841"
+        iyz="2.23703699382001E-12"
+        izz="0.000144931455463818" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/left_before.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/left_before.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftbefore"
+    type="continuous">
+    <origin
+      xyz="-0.24 0.150000000036814 -0.0050000000577491"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_before" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="left_after">
+    <inertial>
+      <origin
+        xyz="-0.0099999999999853 -6.04344824184366E-10 3.95704546386766E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.18058152802368" />
+      <inertia
+        ixx="0.000277824125988542"
+        ixy="5.99170624569965E-15"
+        ixz="9.70353969850714E-15"
+        iyy="0.00014493145276985"
+        iyz="2.3221307785891E-12"
+        izz="0.000144931455319808" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/left_after.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/left_after.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="leftafter"
+    type="continuous">
+    <origin
+      xyz="-0.24 -0.149999999965028 -0.00500000005888248"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_after" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_before">
+    <inertial>
+      <origin
+        xyz="-0.0099999999999853 6.99470842357997E-10 1.80431241128542E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.18058152802368" />
+      <inertia
+        ixx="0.000277824125988542"
+        ixy="3.14077313169861E-15"
+        ixz="-1.09633226238493E-14"
+        iyy="0.00014493145185194"
+        iyz="-1.4863043836386E-12"
+        izz="0.000144931456237717" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/right_before.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/right_before.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightbefore"
+    type="continuous">
+    <origin
+      xyz="0.26 0.149999999932917 -0.00499999998621429"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_before" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_after">
+    <inertial>
+      <origin
+        xyz="-0.0099999999999853 3.21272675130047E-10 6.46992095315602E-10"
+        rpy="0 0 0" />
+      <mass
+        value="0.18058152802368" />
+      <inertia
+        ixx="0.000277824125988542"
+        ixy="1.03453370912889E-14"
+        ixz="-4.79899394312806E-15"
+        iyy="0.000144931455830642"
+        iyz="-1.95671440977128E-12"
+        izz="0.000144931452259015" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/right_after.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/right_after.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rightafter"
+    type="continuous">
+    <origin
+      xyz="0.26 -0.150000000054322 -0.00500000004170583"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_after" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="slide_mid">
+    <inertial>
+      <origin
+        xyz="6.82100127119379E-17 -7.12017479021748E-17 0.748725980670836"
+        rpy="0 0 0" />
+      <mass
+        value="1.10521229553289" />
+      <inertia
+        ixx="0.0234283857489033"
+        ixy="-2.05471664158172E-20"
+        ixz="-3.37397429092997E-21"
+        iyy="0.0234283857489033"
+        iyz="5.83335180025769E-21"
+        izz="0.000344247868998736" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/slide_mid.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.752941176470588 0.752941176470588 0.752941176470588 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/slide_mid.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="slidemid"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="slide_mid" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5"
+      upper="0"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="slide_up">
+    <inertial>
+      <origin
+        xyz="1.40166753996547E-16 -0.00766936675443874 1.39093130698109"
+        rpy="0 0 0" />
+      <mass
+        value="3.11804190861851" />
+      <inertia
+        ixx="0.17041028803478"
+        ixy="-1.29906117000528E-18"
+        ixz="6.97463655057139E-17"
+        iyy="0.167129339285852"
+        iyz="0.00330848221682722"
+        izz="0.178605293109143" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/slide_up.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/slide_up.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="slideup"
+    type="prismatic">
+    <origin
+      xyz="0 0 0"
+      rpy="0 0 0" />
+    <parent
+      link="slide_mid" />
+    <child
+      link="slide_up" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      lower="-0.5"
+      upper="0"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="ban_bong">
+    <inertial>
+      <origin
+        xyz="-2.41026691621878E-06 0.274015826914282 0.1650409368416"
+        rpy="0 0 0" />
+      <mass
+        value="2.92829679548961" />
+      <inertia
+        ixx="0.180812221066456"
+        ixy="-9.02931483791629E-07"
+        ixz="1.15142410247614E-07"
+        iyy="0.0866613836189188"
+        iyz="0.00491005173486794"
+        izz="0.146763112974021" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_bong.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_bong.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banbong"
+    type="revolute">
+    <origin
+      xyz="0 -0.20709 1.526"
+      rpy="0 0 0" />
+    <parent
+      link="slide_up" />
+    <child
+      link="ban_bong" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      lower="0"
+      upper="1.0472"
+      effort="300"
+      velocity="3" />
+  </joint>
+  <link
+    name="ban_left">
+    <inertial>
+      <origin
+        xyz="1.97795542805634E-07 -9.39016824297312E-08 -0.0859409782003624"
+        rpy="0 0 0" />
+      <mass
+        value="4.68156826658346" />
+      <inertia
+        ixx="0.0276468687638553"
+        ixy="-1.27007391592128E-08"
+        ixz="-1.36544980163587E-08"
+        iyy="0.0276469687302181"
+        iyz="-1.89850885072234E-08"
+        izz="0.0157940882692498" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_left.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_left.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banleft"
+    type="continuous">
+    <origin
+      xyz="-0.199999999472228 0.568150410311977 0.240656854249493"
+      rpy="0 0 0" />
+    <parent
+      link="ban_bong" />
+    <child
+      link="ban_left" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="ban_right">
+    <inertial>
+      <origin
+        xyz="1.75965640281106E-07 1.3029465173453E-07 -0.112499940848826"
+        rpy="0 0 0" />
+      <mass
+        value="4.68156826658341" />
+      <inertia
+        ixx="0.0276469580480299"
+        ixy="-3.43696007839284E-08"
+        ixz="1.0185209553507E-08"
+        iyy="0.0276468811428891"
+        iyz="-2.06419059842146E-08"
+        izz="0.0157940883889125" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_right.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/ban_right.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="banright"
+    type="continuous">
+    <origin
+      xyz="0.200000000660778 0.568150411024915 0.267215816897956"
+      rpy="0 0 0" />
+    <parent
+      link="ban_bong" />
+    <child
+      link="ban_right" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="10"
+      velocity="10" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="camera">
+    <inertial>
+      <origin
+        xyz="-5.78737985617083E-18 -0.00344213389287054 0.00655896264846367"
+        rpy="0 0 0" />
+      <mass
+        value="0.194433406291358" />
+      <inertia
+        ixx="4.31129547890705E-05"
+        ixy="1.40204123627676E-19"
+        ixz="-8.17192514961099E-21"
+        iyy="0.000437538488196091"
+        iyz="3.94868895572797E-20"
+        izz="0.000430798330978885" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/camera.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="file://$(find test8)/meshes/camera.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="camera"
+    type="fixed">
+    <origin
+      xyz="0 0.302656854249492 0.440656854249493"
+      rpy="0 0 0" />
+    <parent
+      link="ban_bong" />
+    <child
+      link="camera" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+</robot>

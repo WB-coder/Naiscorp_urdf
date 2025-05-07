@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <model name="test8">
+    <link name="base_link">
+      <inertial>
+        <pose>3.67391871240909E-17 -2.83649888143271E-17 0.0759584336413709 0 0 0</pose>
+        <mass>4.45287465165593</mass>
+        <inertia>
+          <ixx>0.110766273018809</ixx>
+          <iyy>0.105353330884373</iyy>
+          <izz>0.155207158010102</izz>
+          <ixy>2.45216382337255E-17</ixy>
+          <ixz>1.40550118355875E-19</ixz>
+          <iyz>1.45993853537779E-19</iyz>
+        </inertia>
+      </inertial>
+      <visual name="visual_base_link">
+        <pose>0 0 0 0 0 0</pose>
+        <geometry>
+          <mesh>
+            <uri>model://test8/meshes/base_link.STL</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+  </model>
+</sdf>
