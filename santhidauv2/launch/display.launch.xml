@@ -1,0 +1,12 @@
+<launch>
+    <let name="urdf_path"
+        value="$(find-pkg-share santhidauv2)/world/urdf/santhidauv2.urdf.xacro" />
+    <node pkg="robot_state_publisher" exec="robot_state_publisher">
+        <param name="robot_description"
+                value="$(command 'xacro $(var urdf_path)')" />
+        <remap from="/robot_description" to="/map_description"/>  
+        <remap from="/joint_states" to="/my_map/joint_states"/> 
+    </node>
+    <let name="rviz_config" value="$(find-pkg-share santhidauv2)/rviz/rviz.rviz"/>
+    <node name="rviz2" pkg="rviz2" exec="rviz2" args="-d $(var rviz_config)"/>
+</launch>
